@@ -1,0 +1,146 @@
+/* src/app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Variables globales */
+:root {
+  --primary-color: #1976d2;
+  --primary-light: #63a4ff;
+  --primary-dark: #004ba0;
+  --secondary-color: #dc004e;
+  --background-default: #f4f6f8;
+  --background-paper: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --border-radius: 10px;
+  --spacing-unit: 8px;
+}
+
+/* Reset y estilos base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #__next {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-default);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Contenedor central para un layout consistente */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--spacing-unit) * 2);
+}
+
+/* Layout con CSS Grid para estructuras de dos columnas */
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+}
+
+@media (max-width: 960px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Encabezado y pie de página */
+header, footer {
+  background-color: var(--background-paper);
+  padding: calc(var(--spacing-unit) * 2);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Utilidades de espaciado */
+.mt-1 { margin-top: var(--spacing-unit); }
+.mt-2 { margin-top: calc(var(--spacing-unit) * 2); }
+.mt-3 { margin-top: calc(var(--spacing-unit) * 3); }
+.mb-1 { margin-bottom: var(--spacing-unit); }
+.mb-2 { margin-bottom: calc(var(--spacing-unit) * 2); }
+.mb-3 { margin-bottom: calc(var(--spacing-unit) * 3); }
+.p-1 { padding: var(--spacing-unit); }
+.p-2 { padding: calc(var(--spacing-unit) * 2); }
+.p-3 { padding: calc(var(--spacing-unit) * 3); }
+
+/* Animaciones simples para micro-interacciones */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Estilos para formularios y controles */
+input, select, textarea {
+  font-family: inherit;
+  padding: calc(var(--spacing-unit) * 1);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-color);
+}
+
+/* Imágenes y videos */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Clases para mostrar/ocultar elementos */
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+/* Foco visible para accesibilidad */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Responsividad para dispositivos móviles */
+@media (max-width: 600px) {
+  .container {
+    padding: calc(var(--spacing-unit));
+  }
+  header, footer {
+    padding: calc(var(--spacing-unit) * 1);
+  }
+}
